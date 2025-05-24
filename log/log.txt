@@ -1,0 +1,6 @@
+{"level":"INFO","time":"2025-05-24T16:03:22.600+0700","caller":"cli/main.log.go:40","msg":"Info Log","line":1,"old":1}
+{"level":"ERROR","time":"2025-05-24T16:03:22.601+0700","caller":"cli/main.log.go:41","msg":"Error Log","line":2,"old":2}
+{"level":"INFO","time":"2025-05-24T16:29:33.737+0700","caller":"cli/main.log.go:40","msg":"Info Log","line":1,"old":1}
+{"level":"ERROR","time":"2025-05-24T16:29:33.737+0700","caller":"cli/main.log.go:41","msg":"Error Log","line":2,"old":2}
+{"level":"INFO","time":"2025-05-24T16:49:39.194+0700","caller":"cli/main.log.go:41","msg":"Info Log","line":1,"old":1}
+{"level":"ERROR","time":"2025-05-24T16:49:39.194+0700","caller":"cli/main.log.go:42","msg":"Error Log","line":2,"old":2}
