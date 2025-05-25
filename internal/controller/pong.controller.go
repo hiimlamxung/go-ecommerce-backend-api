@@ -1,9 +1,9 @@
 package controller
 
 import (
+	"fmt"
 	"net/http"
 
-	"github.com/davecgh/go-spew/spew"
 	"github.com/gin-gonic/gin"
 )
 
@@ -15,9 +15,10 @@ func NewPongController() *PongController {
 }
 
 func (pc *PongController) Pong(c *gin.Context) {
+	fmt.Println("My Handler Pong")
 	name := c.Param("name")
 	uid := c.DefaultQuery("uid", "123456")
-	spew.Dump([]string{"user1", "user2", "user3"})
+	// spew.Dump([]string{"user1", "user2", "user3"})
 	c.JSON(http.StatusOK, gin.H{
 		"name":  name,
 		"uid":   uid,

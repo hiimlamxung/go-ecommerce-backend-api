@@ -1,0 +1,7 @@
+methods:
+  - name: "Paypal"
+    description: "Paypal is a payment method"
+  - name: "Stripe"
+    description: "Stripe is a payment method"
+  - name: "Momo"
+    description: "Momo is a payment method"

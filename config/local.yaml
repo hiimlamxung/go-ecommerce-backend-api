@@ -1,0 +1,21 @@
+server:
+  port: 8010
+databases:
+  - user: admin
+    password: admin
+    host: localhost
+    port: 3306
+    dbName: shop_dev
+  - user: admin
+    password: admin
+    host: localhost
+    port: 3307
+    dbName: shop_dev2
+
+security:
+  jwt:
+    key: "abc123"
+
+
+
+
