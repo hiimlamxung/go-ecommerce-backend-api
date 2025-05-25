@@ -1,3 +1,4 @@
 docs/
 tmp/
 config/production.yaml
+.env
