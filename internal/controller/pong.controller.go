@@ -25,3 +25,7 @@ func (pc *PongController) Pong(c *gin.Context) {
 		"users": []string{"user1", "user2", "user3"},
 	})
 }
+
+func (pc *PongController) TestPanic(c *gin.Context) {
+	panic("test panic")
+}

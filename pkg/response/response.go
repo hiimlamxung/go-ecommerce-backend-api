@@ -25,7 +25,7 @@ func ReturnResponse(c *gin.Context, httpCode int, message string, internalCode i
 	})
 }
 
-// ResponseWithMessage - chỉ cần truyền message, internalCode sẽ tự động = httpCode
+// ResponseWithMessage - chỉ cần truyền message. internalCode sẽ tự động = httpCode
 // Params:
 //   - c: gin context
 //   - httpCode: HTTP status code, sẽ được dùng làm internalCode

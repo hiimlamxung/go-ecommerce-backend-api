@@ -5,6 +5,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/hiimlamxung/go-ecommerce-backend-api/internal/controller"
+	"github.com/hiimlamxung/go-ecommerce-backend-api/internal/middlewares"
 )
 
 func AA() gin.HandlerFunc {
@@ -32,7 +33,9 @@ func CC(c *gin.Context) {
 func NewRouter() *gin.Engine {
 	router := gin.Default()
 	// use middleware
-	router.Use(AA(), BB(), CC)
+	// router.Use(AA(), BB(), CC)
+	router.Use(middlewares.AuthenMiddleware(), BB(), CC)
+
 	// group route
 	{
 		{
@@ -41,6 +44,7 @@ func NewRouter() *gin.Engine {
 				v1 := api.Group("/v1")
 				{
 					v1.GET("/ping/:name", controller.NewPongController().Pong)
+					v1.GET("/test-panic", controller.NewPongController().TestPanic)
 
 					testBind := v1.Group("/test-bind-form-data")
 					{
