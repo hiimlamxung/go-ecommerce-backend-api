@@ -27,13 +27,6 @@ type Config struct {
 	} `mapstructure:"security"`
 }
 
-type PaymentConfig struct {
-	Methods []struct {
-		Name        string `mapstructure:"name"`
-		Description string `mapstructure:"description"`
-	} `mapstructure:"methods"`
-}
-
 func main() {
 	viper := viper.New()
 	viper.AddConfigPath("./config/") // path to config
@@ -46,22 +39,10 @@ func main() {
 		panic(fmt.Errorf("failed to read configuration %w", err))
 	}
 
-	// Đọc config payment
-	viper.SetConfigName("payment") // Tìm file payment.yaml
-	if err := viper.MergeInConfig(); err != nil {
-		panic(fmt.Errorf("failed to merge payment configuration: %w", err))
-	}
-
 	// configure struct cho config chính
 	var config Config
 	if err := viper.Unmarshal(&config); err != nil {
 		panic(fmt.Errorf("failed to unmarshal configuration %w", err))
-	}
-
-	// configure struct cho payment config
-	var paymentConfig PaymentConfig
-	if err := viper.Unmarshal(&paymentConfig); err != nil {
-		panic(fmt.Errorf("failed to unmarshal payment configuration %w", err))
 	}
 
 	// read config from struct
@@ -71,11 +52,5 @@ func main() {
 
 	for _, db := range config.Databases {
 		fmt.Printf("Database user: %s, password: %s, host: %s, port: %d \n", db.User, db.Password, db.Host, db.Port)
-	}
-
-	// read payment config
-	fmt.Println("\nĐọc config từ file payment.yaml")
-	for _, method := range paymentConfig.Methods {
-		fmt.Printf("- %s: %s\n", method.Name, method.Description)
 	}
 }
